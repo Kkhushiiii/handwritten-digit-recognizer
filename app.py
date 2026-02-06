@@ -9,12 +9,22 @@ model = load_model("saved_model/mnist_cnn_model.h5")
 
 # ---------------- Image Processing ----------------
 def preprocess_image(image):
-    image = image.convert("L")          # Grayscale
-    image = image.resize((28, 28))      # Resize to MNIST size
+    # Convert to grayscale
+    image = image.convert("L")
+
+    # Resize to MNIST size
+    image = image.resize((28, 28))
+
     image = np.array(image)
 
-    image = 255 - image                 # Invert colors
-    image = image / 255.0               # Normalize
+    # Auto invert if background is light
+    if np.mean(image) > 127:
+        image = 255 - image
+
+    # Normalize
+    image = image / 255.0
+
+    # Reshape for CNN
     image = image.reshape(1, 28, 28, 1)
 
     return image
@@ -134,3 +144,4 @@ tk.Label(
 ).pack(side="bottom", pady=15)
 
 root.mainloop()
+
