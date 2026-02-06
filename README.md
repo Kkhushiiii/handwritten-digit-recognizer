@@ -39,9 +39,9 @@ The application is built using **Python**, **TensorFlow**, and **Tkinter**.
 ---
 
 ## 1️ Clone the Repository
-bash:-
+```bash
 
-git clone https://github.com/kkhushiii/handwritten-digit-recognizer.git
+git clone https://github.com/Kkhushiiii/handwritten-digit-recognizer.git
 
 cd handwritten-digit-recognizer
 
@@ -54,5 +54,6 @@ python app.py
 
 
 ---
+
 
 
