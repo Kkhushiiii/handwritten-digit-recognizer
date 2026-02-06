@@ -25,24 +25,33 @@ The application is built using **Python**, **TensorFlow**, and **Tkinter**.
 ---
 
 ## Input Image Guidelines 
+   
+   The model is trained on the **MNIST dataset**, Images closer to this format give better results :-
 
 - Image should contain one digit (0–9)
 
-- Prefer black digit on white background
+- Prefer thick black digit on plain white background
 
 - Supported formats: .png, .jpg, .jpeg
 
+- Digit should be centered in the image
+
 ---
 
-## Project Structure
+## 1️ Clone the Repository
+bash:-
 
-handwritten_digit_recognizer/
-│
-├── app.py # Tkinter desktop application
-├── train_model.py # CNN model training script
-│
-├── saved_model/
-│ └── mnist_cnn_model.h5 # Trained CNN model
-│
-├── requirements.txt
-├── README.md
+git clone https://github.com/your-username/handwritten-digit-recognizer.git
+
+cd handwritten-digit-recognizer
+
+python -m venv venv
+venv\Scripts\activate   
+
+pip install -r requirements.txt
+
+python app.py
+
+
+---
+
